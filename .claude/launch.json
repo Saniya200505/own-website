@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "qoutes-static", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8777"], "port": 8777 },
+    { "name": "marginalia-next", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "marginalia-next", "run", "dev"], "port": 3000 }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+ "label": {
+  "left": 4.0039,
+  "top": 3.0792,
+  "width": 27.4414,
+  "height": 6.5982,
+  "bleed": 0.0
+ },
+ "nav": {
+  "left": 67.0898,
+  "top": 2.9326,
+  "width": 29.5898,
+  "height": 6.1584,
+  "bleed": 0.0
+ },
+ "headline": {
+  "left": 3.6133,
+  "top": 11.5836,
+  "width": 47.5586,
+  "height": 34.1642,
+  "bleed": 0.0
+ },
+ "copy": {
+  "left": 4.3945,
+  "top": 48.2405,
+  "width": 31.543,
+  "height": 14.8094,
+  "bleed": 0.0
+ },
+ "cta": {
+  "left": 4.3945,
+  "top": 60.8504,
+  "width": 30.957,
+  "height": 13.0499,
+  "bleed": 0.0
+ },
+ "discipline": {
+  "left": 4.5898,
+  "top": 84.3109,
+  "width": 12.9883,
+  "height": 10.7038,
+  "bleed": 0.0
+ },
+ "note": {
+  "left": 81.8359,
+  "top": 9.2375,
+  "width": 14.3555,
+  "height": 31.085,
+  "bleed": 0.0
+ },
+ "books": {
+  "left": 35.0586,
+  "top": 69.2082,
+  "width": 50.293,
+  "height": 19.7947,
+  "bleed": 0.0
+ },
+ "journal": {
+  "left": 50.0,
+  "top": 11.1437,
+  "width": 33.3008,
+  "height": 63.783,
+  "bleed": 0.0
+ },
+ "orb": {
+  "left": 36.6211,
+  "top": 55.2786,
+  "width": 12.3047,
+  "height": 17.3021,
+  "bleed": 0.0
+ },
+ "pencup": {
+  "left": 81.4453,
+  "top": 32.2581,
+  "width": 18.5547,
+  "height": 45.3079,
+  "bleed": 0.0
+ },
+ "notebook": {
+  "left": 23.9258,
+  "top": 79.1789,
+  "width": 33.8867,
+  "height": 24.6334,
+  "bleed": 3.8123
+ },
+ "pencil": {
+  "left": 12.5977,
+  "top": 84.1642,
+  "width": 14.7461,
+  "height": 19.6481,
+  "bleed": 3.8123
+ },
+ "laptop": {
+  "left": 66.8945,
+  "top": 83.5777,
+  "width": 28.3203,
+  "height": 20.2346,
+  "bleed": 3.8123
+ },
+ "plant": {
+  "left": 81.9336,
+  "top": 54.9853,
+  "width": 18.0664,
+  "height": 48.827,
+  "bleed": 3.8123
+ }
+}
