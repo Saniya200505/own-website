@@ -21,8 +21,8 @@ const HITS = [
 const SRC = '/assets/typing_sound.mp3';
 
 const FULL_TEXT_1 = "BELIEVE · PLAN · GROW · ACHIEVE";
-const FULL_TEXT_2 = "Whatever your goal is,\nbelieve in yourself and keep moving toward it.";
-const FULL_TEXT_3 = "And if there are days when you don’t believe in yourself, that’s okay.\nI’ll believe in you. I believe in your ideas, your potential, and everything\nyou’re capable of becoming. So keep going. You don’t have to figure it\nall out alone; I’m with you throughout the journey.";
+const FULL_TEXT_2 = "Whatever your goal is,\nbelieve in yourself and keep moving towards it.";
+const FULL_TEXT_3 = "And if there are days when you don’t believe in yourself, that’s okay.\nI believe in you. I believe in your ideas, your potential, and everything\nyou’re capable of becoming. So keep going. You don’t have to figure it\nall out alone; I’m with you throughout the journey.";
 
 export default function RoadmapPage() {
   const [goalText, setGoalText] = useState('');
@@ -48,7 +48,7 @@ export default function RoadmapPage() {
         a.preload = 'auto';
         return a;
       });
-    } catch (e) {}
+    } catch (e) { }
 
     const initAudio = async () => {
       try {
@@ -71,14 +71,14 @@ export default function RoadmapPage() {
             audioBufRef.current = await ctx.decodeAudioData(arrayBuf);
           }
         }
-      } catch (e) {}
+      } catch (e) { }
     };
 
     initAudio();
 
     const wake = () => {
       if (audioCtxRef.current && audioCtxRef.current.state === 'suspended') {
-        audioCtxRef.current.resume().catch(() => {});
+        audioCtxRef.current.resume().catch(() => { });
       }
     };
     const events = ['pointerdown', 'keydown', 'touchstart', 'click', 'mousemove', 'pointermove', 'scroll', 'wheel'];
@@ -111,7 +111,7 @@ export default function RoadmapPage() {
         srcNode.start(ctx.currentTime, hitSample, 0.17);
         srcNode.stop(ctx.currentTime + 0.19);
         return;
-      } catch (err) {}
+      } catch (err) { }
     }
 
     // Method B: Immediate HTML5 Audio Pool (plays from character 1 right from load)
@@ -124,9 +124,9 @@ export default function RoadmapPage() {
         a.volume = (space ? 0.11 : 0.15) * (0.8 + Math.random() * 0.35);
         a.currentTime = HITS[(Math.random() * HITS.length) | 0];
         const p = a.play();
-        if (p) p.catch(() => {});
-        setTimeout(() => { try { a.pause(); } catch (e) {} }, 160);
-      } catch (e) {}
+        if (p) p.catch(() => { });
+        setTimeout(() => { try { a.pause(); } catch (e) { } }, 160);
+      } catch (e) { }
     }
   };
 
@@ -200,6 +200,8 @@ export default function RoadmapPage() {
     }
   };
 
+  const isContentFullyDisplayed = activeBlock === 0;
+
   return (
     <ShopProvider>
       <div className="veil" aria-hidden="true"></div>
@@ -243,7 +245,18 @@ export default function RoadmapPage() {
             {activeBlock === 3 && <i className="caret"></i>}
           </p>
 
-          <form className="goal-form" id="goalForm" onSubmit={handleSubmit} autoComplete="off">
+          <form
+            className="goal-form"
+            id="goalForm"
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            style={{
+              opacity: isContentFullyDisplayed ? 1 : 0,
+              transform: isContentFullyDisplayed ? 'translateY(0)' : 'translateY(16px)',
+              pointerEvents: isContentFullyDisplayed ? 'auto' : 'none',
+              transition: 'opacity 0.72s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1)'
+            }}
+          >
             <label className="sr-only" htmlFor="goalInput">Type your goal or idea</label>
             <input
               className="goal-input"
@@ -273,7 +286,16 @@ export default function RoadmapPage() {
             </div>
           )}
 
-          <p className="rm-foot">A BRIGHTER YOU STARTS WITH A THOUGHT.</p>
+          <p
+            className="rm-foot"
+            style={{
+              opacity: isContentFullyDisplayed ? 1 : 0,
+              transform: isContentFullyDisplayed ? 'translateY(0)' : 'translateY(14px)',
+              transition: 'opacity 0.8s cubic-bezier(.16,1,.3,1) 0.2s, transform 0.8s cubic-bezier(.16,1,.3,1) 0.2s'
+            }}
+          >
+            A BRIGHTER YOU STARTS WITH A THOUGHT.
+          </p>
         </section>
       </main>
 

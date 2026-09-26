@@ -212,8 +212,8 @@ html.menu-open{overflow:hidden}
 /* ---------- gallery / mood board ---------- */
 .gallery{position:relative;padding-block:clamp(16px,3vw,40px)}
 
-.moodboard-container{position:relative;width:100%;max-width:1140px;margin-inline:auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);background:var(--sand)}
-.moodboard-wrapper{position:relative;width:100%;aspect-ratio:16/9;max-height:calc(88vh - 40px);border-radius:var(--r-lg);overflow:hidden;background:var(--sand)}
+.moodboard-container{position:relative;width:100%;max-width:1140px;margin-inline:auto;border-radius:var(--r-lg);box-shadow:var(--shadow);background:var(--sand)}
+.moodboard-wrapper{position:relative;width:100%;aspect-ratio:16/9;max-height:calc(88vh - 40px);border-radius:var(--r-lg);background:var(--sand)}
 .moodboard-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:var(--r-lg);transition:transform 1.4s var(--slow)}
 .moodboard-container:hover .moodboard-img{transform:scale(1.015)}
 
@@ -225,6 +225,10 @@ html.menu-open{overflow:hidden}
 .moodboard-hotspot:hover::before{background:#D28D9D}
 .moodboard-hotspot::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) scale(0.9);transform-origin:bottom center;background:var(--ink);color:var(--ivory);font-size:.82rem;font-weight:500;padding:6px 14px;border-radius:999px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .3s var(--ease), transform .3s var(--slow);box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:30}
 .moodboard-hotspot:hover::after{opacity:1;transform:translateX(-50%) scale(1)}
+.moodboard-hotspot.align-left::after{left:0;transform:translateX(0) scale(0.9);transform-origin:bottom left}
+.moodboard-hotspot.align-left:hover::after{transform:translateX(0) scale(1)}
+.moodboard-hotspot.align-right::after{left:auto;right:0;transform:translateX(0) scale(0.9);transform-origin:bottom right}
+.moodboard-hotspot.align-right:hover::after{transform:translateX(0) scale(1)}
 
 .js .reveal-img{clip-path:inset(10% 0 0 0 round var(--r-lg));opacity:0;transition:clip-path 1.8s var(--slow), opacity 1.3s var(--ease)}
 .js .reveal-img.is-in{clip-path:inset(0 0 0 0 round var(--r-lg));opacity:1}

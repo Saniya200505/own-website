@@ -1,12 +1,12 @@
 const HOTSPOTS = [
-  { top: '22%', left: '16%', tooltip: 'HAPPY: Find joy in the little things ↗', label: 'Happy note' },
-  { top: '20%', left: '69%', tooltip: 'GROWTH: A better version of me everyday ↗', label: 'Growth note' },
-  { top: '47%', left: '16%', tooltip: 'MOTIVATION: Small steps big progress ↗', label: 'Motivation note' },
-  { top: '47%', left: '71%', tooltip: 'GRATITUDE: More of what makes me smile ↗', label: 'Gratitude note' },
-  { top: '76%', left: '14%', tooltip: 'INSPIRATION: A kinder, brighter, braver you ↗', label: 'Inspiration note' },
-  { top: '74%', left: '70%', tooltip: 'SELF LOVE: Kind mind, brave heart, happy soul ↗', label: 'Self love note' },
-  { top: '88%', left: '50%', tooltip: 'Create ✦ Grow ✦ Shine ↗', label: 'Pill badge' },
-  { top: '19%', left: '88%', tooltip: 'Morning Latte ☕ ↗', label: 'Coffee cup' },
+  { top: '22%', left: '16%', tooltip: 'HAPPY: Find joy in the little things ↗', label: 'Happy note', align: 'left' },
+  { top: '20%', left: '69%', tooltip: 'GROWTH: A better version of me everyday ↗', label: 'Growth note', align: 'center' },
+  { top: '47%', left: '16%', tooltip: 'MOTIVATION: Small steps big progress ↗', label: 'Motivation note', align: 'left' },
+  { top: '47%', left: '71%', tooltip: 'GRATITUDE: More of what makes me smile ↗', label: 'Gratitude note', align: 'center' },
+  { top: '76%', left: '14%', tooltip: 'INSPIRATION: A kinder, brighter, braver you ↗', label: 'Inspiration note', align: 'left' },
+  { top: '74%', left: '70%', tooltip: 'SELF LOVE: Kind mind, brave heart, happy soul ↗', label: 'Self love note', align: 'center' },
+  { top: '88%', left: '50%', tooltip: 'Create ✦ Grow ✦ Shine ↗', label: 'Pill badge', align: 'center' },
+  { top: '19%', left: '88%', tooltip: 'Morning Latte ☕ ↗', label: 'Coffee cup', align: 'right' },
 ];
 
 export default function MoodBoard() {
@@ -27,7 +27,7 @@ export default function MoodBoard() {
               href="about:blank"
               target="_blank"
               rel="noopener noreferrer"
-              className="moodboard-hotspot"
+              className={`moodboard-hotspot align-${h.align || 'center'}`}
               style={{ top: h.top, left: h.left }}
               data-tooltip={h.tooltip}
               aria-label={h.label}
