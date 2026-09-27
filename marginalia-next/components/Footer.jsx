@@ -12,11 +12,11 @@ export default function Footer() {
     <footer className="footer wrap" id="contact">
       <div className="footer-top">
         <div className="footer-brand">
-          <Link className="logo" href="/" aria-label="Marginalia, back to home page">
+          <Link className="logo" href="/" aria-label="NIVANT, back to home page">
             <LogoIcon />
-            Marginalia.
+            NIVANT.
           </Link>
-          <p>An independent bookshop for slow readers, fast readers and everyone in between.</p>
+          <p>A place where you can relax, find peace, and build something of your own.</p>
         </div>
         <div>
           <h3>Navigation</h3>
@@ -27,20 +27,20 @@ export default function Footer() {
         </div>
         <div>
           <h3>Visit</h3>
-          <p>14 Linden Row<br />Open daily, 10 am to 8 pm</p>
+          <p>Open daily, 10 am to 8 pm</p>
         </div>
         <div>
           <h3>Say hello</h3>
           <ul>
-            <li><a href="mailto:hello@marginalia.books">hello@marginalia.books</a></li>
+            <li><a href="mailto:hello@nivant.app">hello@nivant.app</a></li>
             <li><Link href="/#contact">Instagram</Link></li>
             <li><Link href="/#letter">The Sunday letter</Link></li>
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 Marginalia Books</span>
-        <span>Wrapped by hand, shipped with care.</span>
+        <span>© 2026 NIVANT</span>
+        <span>Made with care & peace.</span>
       </div>
     </footer>
   );

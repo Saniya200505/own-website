@@ -125,7 +125,8 @@ export default function Featured() {
 
         {/* Hotspot overlay over Open My Roadmap button */}
         <Link
-          href="/roadmap"
+          href="/my-roadmap"
+          target="_self"
           className={`roadmap-overlay-btn ${added ? 'is-added' : ''}`}
           onClick={handleOpenRoadmap}
           aria-label="Open My Roadmap"

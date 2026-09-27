@@ -34,9 +34,9 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}${hidden ? ' is-hidden' : ''}`} id="header">
       <div className="nav wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Link className="logo" href="/" aria-label="Marginalia, back to home page" style={{ margin: '0 auto' }}>
+        <Link className="logo" href="/" aria-label="NIVANT, back to home page" style={{ margin: '0 auto' }}>
           <LogoIcon />
-          Marginalia.
+          NIVANT.
         </Link>
       </div>
     </header>

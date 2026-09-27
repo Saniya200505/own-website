@@ -57,7 +57,7 @@ export default function Hero() {
           <span className="hero-line hero-line-3"><span>HERE.</span></span>
         </h1>
         <p className="hero-body-text">
-          Take a moment. Look around. Read something that catches your attention, play a little, and leave with a thought of your own.
+          A place where you can relax, find peace, and build something of your own.
         </p>
       </div>
       <div className="hero-visual" id="heroVisual">

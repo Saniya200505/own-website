@@ -25,8 +25,7 @@ export default function MoodBoard() {
             <a
               key={h.label}
               href="about:blank"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="_self"
               className={`moodboard-hotspot align-${h.align || 'center'}`}
               style={{ top: h.top, left: h.left }}
               data-tooltip={h.tooltip}

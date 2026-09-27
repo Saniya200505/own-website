@@ -1067,3 +1067,349 @@ html.menu-open{overflow:hidden}
   .goal-submit .label { display: none; }
 }
 
+/* ================= AUTH MODAL & ROADMAP VIEW STYLES ================= */
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(36, 25, 26, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  animation: authOverlayFade 0.3s ease-out;
+}
+
+@keyframes authOverlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auth-modal-card {
+  background: #FFFDFD;
+  border: 1px solid rgba(245, 209, 216, 0.8);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px -12px rgba(36, 25, 26, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  width: min(440px, 100%);
+  padding: 36px 32px;
+  position: relative;
+  animation: authCardScale 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes authCardScale {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--sand);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  color: var(--ink-75);
+  transition: all 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  background: var(--mauve);
+  color: var(--ink);
+}
+
+.auth-modal-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-modal-header h2 {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  color: #5C3840;
+  margin-bottom: 6px;
+}
+
+.auth-modal-header p {
+  font-size: 0.92rem;
+  color: var(--ink-75);
+  line-height: 1.45;
+}
+
+.auth-form-group {
+  margin-bottom: 18px;
+}
+
+.auth-form-group label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6E4D54;
+  margin-bottom: 6px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(128, 103, 108, 0.25);
+  background: rgba(255, 245, 246, 0.4);
+  font-family: var(--text);
+  font-size: 0.98rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.auth-input:focus {
+  border-color: #8C5662;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 209, 216, 0.4);
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper .auth-input {
+  padding-right: 44px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--ink-75);
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.toggle-password-btn:hover {
+  color: #5C3840;
+  background: var(--sand);
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 999px;
+  border: none;
+  background: #5C3840;
+  color: #FFFFFF;
+  font-family: var(--text);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 4px 14px rgba(92, 56, 64, 0.3);
+}
+
+.auth-submit-btn:hover {
+  background: #44292F;
+  transform: translateY(-1px);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-switch-prompt {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--ink-75);
+}
+
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: #8C5662;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.auth-switch-btn:hover {
+  color: #44292F;
+}
+
+.auth-error-msg {
+  background: #FFF0F2;
+  border: 1px solid #F7C6CE;
+  color: #9E2A3B;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Roadmap Display View */
+.user-roadmap-container {
+  margin-top: 40px;
+  width: min(880px, 100%);
+  margin-inline: auto;
+}
+
+.roadmap-header-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(245, 209, 216, 0.9);
+  border-radius: 24px;
+  padding: 28px 32px;
+  box-shadow: 0 12px 32px rgba(36, 25, 26, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.roadmap-user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F5D1D8, #DFA3B1);
+  color: #5C3840;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(128, 103, 108, 0.2);
+}
+
+.roadmap-user-info h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: #44292F;
+}
+
+.roadmap-user-info p {
+  font-size: 0.85rem;
+  color: var(--ink-75);
+}
+
+.logout-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--ink-14);
+  background: var(--sand);
+  color: #5C3840;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: var(--mauve);
+  border-color: var(--mauve);
+}
+
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.roadmap-timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 7px;
+  width: 3px;
+  background: linear-gradient(to bottom, #DFA3B1, #F5D1D8, #FCE8EC);
+  border-radius: 99px;
+}
+
+.roadmap-step-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(245, 209, 216, 0.7);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(36, 25, 26, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.roadmap-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(36, 25, 26, 0.08);
+}
+
+.roadmap-step-card::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -24px;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #8C5662;
+  border: 3px solid #FFF5F6;
+  box-shadow: 0 0 0 2px #DFA3B1;
+}
+
+.roadmap-step-card.hero-step::before {
+  background: #5C3840;
+  width: 19px;
+  height: 19px;
+  left: -24px;
+}
+
+.step-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8C5662;
+  background: var(--sand);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.step-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: #382025;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 0.96rem;
+  color: var(--ink-75);
+  line-height: 1.55;
+}
+
+

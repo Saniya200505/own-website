@@ -1,7 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Marginalia. An independent bookshop',
+  title: 'NIVANT | A place where you can relax, find peace, and build something of your own.',
+  description: 'NIVANT: A place where you can relax, find peace, and build something of your own.',
 };
 
 export const viewport = {
