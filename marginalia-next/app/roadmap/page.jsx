@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Butterfly from '../../components/Butterfly';
 import PageEffects from '../../components/PageEffects';
+import PersonalRoadmapView from '../../components/PersonalRoadmapView';
 
 const HITS = [
   1.971, 2.211, 2.406, 3.781, 3.976, 4.146, 4.341, 4.691, 4.946, 5.121, 5.291, 5.621,
@@ -414,55 +415,7 @@ export default function RoadmapPage() {
 
           {/* USER ROADMAP DISPLAY VIEW (when logged in & goal submitted) */}
           {user && (user.goal || (user.goals && user.goals.length > 0)) && (
-            <div className="user-roadmap-container">
-              <div className="roadmap-header-card">
-                <div className="roadmap-user-info">
-                  <div className="user-avatar-circle">
-                    {user.username.charAt(0).toUpperCase()}
-                  </div>
-                  <div>
-                    <h3>{user.username}'s Personal Roadmap</h3>
-                  </div>
-                </div>
-                <button className="logout-btn" onClick={handleLogout}>
-                  Sign Out
-                </button>
-              </div>
-
-              <div className="roadmap-timeline">
-                <div className="roadmap-step-card hero-step">
-                  <span className="step-tag">🌱 Core Goal & Vision</span>
-                  <h3 className="step-title">"{user.goal}"</h3>
-                  <p className="step-desc">
-                    Your intention has been recorded in the database. Every big accomplishment begins with the decision to try.
-                  </p>
-                </div>
-
-                <div className="roadmap-step-card">
-                  <span className="step-tag">Phase 1 · Mindset & Planning</span>
-                  <h4 className="step-title">Break Down & Daily Alignment</h4>
-                  <p className="step-desc">
-                    Transform "{user.goal}" into small, achievable daily habits. Consistency builds confidence.
-                  </p>
-                </div>
-
-                <div className="roadmap-step-card">
-                  <span className="step-tag">Phase 2 · Execution & Growth</span>
-                  <h4 className="step-title">Pushing Through & Expanding Capabilities</h4>
-                  <p className="step-desc">
-                    Embrace challenges along the way. Remember: "I believe in your ideas, your potential, and everything you're capable of becoming."
-                  </p>
-                </div>
-
-                <div className="roadmap-step-card">
-                  <span className="step-tag">Phase 3 · Manifestation & Achievement</span>
-                  <h4 className="step-title">Celebrating Milestones</h4>
-                  <p className="step-desc">
-                    Look back at how far you've come. Your roadmap is a living testimony of your growth.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <PersonalRoadmapView user={user} onSignOut={handleLogout} />
           )}
 
           <p

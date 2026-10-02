@@ -121,7 +121,7 @@ html.menu-open{overflow:hidden}
 .hero-girl-wrapper{position:relative;width:100%;max-width:480px;height:auto;display:block;transform-origin:100% 60%;will-change:transform}
 .hero-girl-wrapper::before{content:"";position:absolute;inset:-25px;border-radius:50%;background:radial-gradient(circle at 50% 50%, rgba(245,209,216,.8), transparent 70%);filter:blur(28px);z-index:-1;pointer-events:none}
 
-.hero-girl-img{width:100%;height:auto;object-fit:contain;display:block;pointer-events:none;user-select:none}
+.hero-girl-img{width:100%;height:auto;object-fit:contain;display:block;pointer-events:none;user-select:none;opacity:0}
 
 /* Page-Load Welcome Sequence (Pivoted from the right wall edge) */
 .is-loaded .hero-girl-wrapper{
@@ -1411,5 +1411,316 @@ html.menu-open{overflow:hidden}
   color: var(--ink-75);
   line-height: 1.55;
 }
+
+/* ==========================================================================
+   NIVANT PERSONAL ROADMAP - S-CURVE DESIGN SYSTEM
+   ========================================================================== */
+.nivant-roadmap-wrapper {
+  background-color: #FAF1F2;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #4A151B;
+}
+
+.nivant-brand-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.nivant-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4A151B;
+  letter-spacing: 0.08em;
+}
+
+.nivant-roadmap-topbar {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  border: 1.5px solid rgba(165, 110, 120, 0.35);
+  border-radius: 999px;
+  padding: 10px 20px 10px 14px;
+  background: rgba(255, 248, 249, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(74, 21, 27, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+.nivant-user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.nivant-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ECC3C8;
+  color: #4A151B;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(74, 21, 27, 0.12);
+}
+
+.nivant-user-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  color: #4A151B;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nivant-signout-btn {
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(165, 110, 120, 0.45);
+  background: rgba(246, 211, 216, 0.35);
+  color: #4A151B;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.nivant-signout-btn:hover {
+  background: #F6D3D8;
+  border-color: #4A151B;
+}
+
+.nivant-timeline-container {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  min-height: 1120px;
+}
+
+.nivant-scurve-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+.nivant-steps-layout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.nivant-step-item {
+  position: absolute;
+}
+
+.nivant-step-item.step-1 {
+  top: 40px;
+  left: 210px;
+  max-width: 460px;
+}
+
+.nivant-step-item.step-2 {
+  top: 330px;
+  left: 410px;
+  max-width: 320px;
+}
+
+.nivant-step-item.step-3 {
+  top: 620px;
+  left: 270px;
+  max-width: 440px;
+}
+
+.nivant-step-item.step-4 {
+  top: 910px;
+  left: 430px;
+  max-width: 310px;
+}
+
+.nivant-step-num-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.nivant-node-marker {
+  position: absolute;
+  left: -38px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FAF1F2;
+  border: 1.8px solid #5C242A;
+  display: grid;
+  place-items: center;
+  z-index: 3;
+}
+
+.nivant-node-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4A151B;
+}
+
+.nivant-step-num {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #4A151B;
+  margin-left: 0;
+}
+
+.nivant-step-line {
+  display: inline-block;
+  width: 55px;
+  height: 1.5px;
+  background-color: #4A151B;
+  opacity: 0.85;
+}
+
+.nivant-step-badge {
+  display: inline-block;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4A151B;
+  background: #F6D3D8;
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.nivant-step-quote,
+.nivant-step-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.25;
+  color: #3A1015;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.nivant-step-subbox {
+  border-left: 2px solid #C7979F;
+  padding-left: 16px;
+  margin-top: 10px;
+}
+
+.nivant-step-subbox p {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #64454B;
+  margin: 0;
+}
+
+.nivant-roadmap-footer {
+  text-align: center;
+  margin-top: 80px;
+  position: relative;
+  z-index: 3;
+}
+
+.nivant-new-goal-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(165, 110, 120, 0.5);
+  background: rgba(246, 211, 216, 0.4);
+  color: #4A151B;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nivant-new-goal-btn:hover {
+  background: #F6D3D8;
+  border-color: #4A151B;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 680px) {
+  .nivant-roadmap-topbar {
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 14px 18px;
+    gap: 12px;
+    text-align: center;
+  }
+  .nivant-user-info {
+    flex-direction: column;
+  }
+  .nivant-user-title {
+    white-space: normal;
+  }
+  .nivant-timeline-container {
+    min-height: auto;
+    padding-left: 20px;
+  }
+  .nivant-scurve-svg {
+    display: none;
+  }
+  .nivant-steps-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    border-left: 2px solid #5C242A;
+    padding-left: 24px;
+    margin-left: 10px;
+  }
+  .nivant-step-item.step-1,
+  .nivant-step-item.step-2,
+  .nivant-step-item.step-3,
+  .nivant-step-item.step-4 {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+  }
+  .nivant-step-item::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #4A151B;
+    box-shadow: 0 0 0 4px #FAF1F2, 0 0 0 6px #5C242A;
+  }
+}
+
 
 
